@@ -3,14 +3,14 @@
   <food-item/>
   <food-item/>
   <food-item/>
-</template>
- 
-<template>
+
   <h1>MAY MGA UTANG</h1>
   <utang/>
   <utang/>
   <utang/>
+
 </template>
+
 <script></script>
  
 
