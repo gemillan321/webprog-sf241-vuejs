@@ -9,7 +9,7 @@
 export default {
   data() {
     return {
-      name: 'Jan, Terrence , Gian, Xander',
+      name: 'Jan, Terrence',
       message: 'Di pa bayad'
     }
   }
