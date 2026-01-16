@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="utang">
     <h2>{{ name }}</h2>
     <p>{{ message }}</p>
   </div>
