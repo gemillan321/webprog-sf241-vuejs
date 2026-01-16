@@ -22,5 +22,12 @@
     padding: 10px;
     background-color: rgb(52, 132, 52);
   }
+  .utang {
+  background-color: rgb(132, 52, 52); /* red-ish */
+  border: dashed black 1px;
+  display: inline-block;
+  margin: 10px;
+  padding: 10px;
+}
 </style>
  
