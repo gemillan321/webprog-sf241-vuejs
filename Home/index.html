@@ -1,22 +1,157 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>My first Vue page</title>
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miles Gemillan | Cybersecurity Portfolio</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    
+
 </head>
-<body>
+<body data-bs-spy="scroll" data-bs-target="#nav-scroll">
+    <div id="app">
+    <nav id="nav-scroll" class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold font-monospace" href="#">
+                <span class="text-primary">M</span>.GEMILLAN<span class="text-primary">_</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto font-monospace">
+                    <li class="nav-item"><a class="nav-link" href="#home">/home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">/about</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">/skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#gallery">/gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">/contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-<h1>Vue Example</h1>
+    <header id="home" class="hero-section d-flex align-items-center">
+        <div class="container" data-aos="fade-up">
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <h5 class="text-primary font-monospace mb-0">Hello, I am</h5>
+                    <h1 class="display-3 fw-bold text-white mb-3">Miles Angelo C. Gemillan</h1>
+                    <p class="lead text-secondary mb-4">
+                        BS Computer Science Student & <span class="text-primary border-bottom">Cybersecurity Researcher</span>. 
+                        Focused on Digital Forensics and Binary Analysis.
+                    </p>
+                    <div class="d-flex gap-3">
+                        <a href="#gallery" class="btn btn-primary px-4 py-2">View Artifacts</a>
+                        <a href="#contact" class="btn btn-outline-light px-4 py-2">Contact Me</a>
+                    </div>
+                </div>
+                <div class="col-lg-5 d-none d-lg-block">
+                    <div class="terminal-window shadow-lg">
+                        <div class="terminal-header d-flex gap-2 p-2">
+                            <span class="dot bg-danger"></span><span class="dot bg-warning"></span><span class="dot bg-success"></span>
+                        </div>
+                        <div class="terminal-body p-4 font-monospace small">
+                            <p class="mb-1 text-success">$ whoami</p>
+                            <p class="mb-3 text-white">miles_gemillan</p>
+                            <p class="mb-1 text-success">$ status</p>
+                            <p class="mb-3 text-white">Threat Hunting...</p>
+                            <p class="mb-1 text-success">$ location</p>
+                            <p class="mb-0 text-white">Philippines</p>
+                            <p class="mt-2 blink text-primary">_</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
 
-<p>The message is taken from 'data' inside the Vue instance by writing {{ message }} inside the div with id="app".</p>
+    <section id="about" class="bg-darker">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-md-5" data-aos="fade-right">
+                    <div class="p-2 border">
+                        <img src="profile2.png" alt="Miles Angelo Gemillan" class="img-fluid rounded">
+                    </div>
+                </div>
+                <div class="col-md-7" data-aos="fade-left">
+                    <h2 class="text-white fw-bold mb-4">Identity & Mission</h2>
+                    <p class="text-secondary lead">
+                        I am a Computer Science student with a specialization in Cybersecurity. My work involves analyzing complex systems and securing them against vulnerabilities.
+                    </p>
+                    <div class="mt-4 p-4 bg-dark border-start border-primary border-4">
+                        <h5 class="text-white mb-2"><i class="bi bi-mortarboard-fill me-2"></i>Education</h5>
+                        <p class="text-secondary mb-0">BS Computer Science | Cybersecurity Specialization</p>
+                        <p class="text-primary small">Continuous Self-Growth & Technical Research</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<div id="app">
-  {{ message }}
-</div>
+    <section id="skills" class="py-5">
+        <div class="container">
+            <h2 class="text-center text-white mb-5" data-aos="fade-up">Technical Arsenal</h2>
+            <div class="row g-4">
+                <div v-for="skill in skills" :key="skill.title" class="col-md-4" data-aos="zoom-in">
+                    <div class="skill-card text-center p-4">
+                        <div class="icon-box mb-3 mx-auto"><i :class="'bi ' + skill.icon"></i></div>
+                        <h4 class="text-white h5">{{ skill.title }}</h4>
+                        <p class="text-secondary small mb-0">{{ skill.desc }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="gallery" class="py-5 bg-darker">
+        <div class="container">
+            <h2 class="text-center text-white mb-5" data-aos="fade-up">Security Artifacts</h2>
+            <div class="row g-4">
+                <div v-for="item in artifacts" :key="item.id" class="col-md-6 col-lg-4" data-aos="fade-up">
+                    <div class="gallery-item shadow-sm">
+                        <img :src="item.img" :alt="item.title" class="img-fluid rounded">
+                        <div class="gallery-overlay font-monospace">
+                            <div class="overlay-text text-white">
+                                <h6>{{ item.title }}</h6>
+                                <p class="small mb-0">{{ item.desc }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-<script src="js/vue.js"></script>
+    <footer id="contact" class="bg-black text-white py-5">
+        <div class="container text-center">
+            <h2 class="mb-4">Get In Touch</h2>
+            <div class="d-flex justify-content-center gap-4 mb-4">
+                <a href="#" class="social-link"><i class="bi bi-github"></i></a>
+                <a href="#" class="social-link"><i class="bi bi-linkedin"></i></a>
+                <a href="mailto:miles@example.com" class="social-link"><i class="bi bi-envelope-at-fill"></i></a>
+            </div>
+            <p class="text-secondary small">&copy; 2025 Miles Angelo C. Gemillan</p>
+            <hr class="w-25 mx-auto border-secondary opacity-25 mt-4">
+            <p class="text-muted" style="font-size: 0.7rem;">
+                Resources: Bootstrap 5, AOS Library, JetBrains Mono, Bootstrap Icons.
+            </p>
+        </div>
+    </footer>
 
-
+    </div> 
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="js/vue.js"></script>
+   
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true });
+    </script>
 </body>
+
 </html>
