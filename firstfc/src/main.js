@@ -2,7 +2,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import FoodItem from './components/FoodItem.vue'
 import Utang from './components/Utang.vue'
-import website from '../introduction/index.html'
+
 
 const app = createApp(App)
 
