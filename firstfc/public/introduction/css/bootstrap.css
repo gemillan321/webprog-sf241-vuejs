@@ -1,0 +1,97 @@
+
+/* --- 1. GLOBAL STYLES & COLOR SCHEME --- */
+:root {
+    --primary-blue: #007bff;
+    --dark-bg: #0a0a0a;
+    --card-bg: #161616;
+    --text-gray: #a0a0a0;
+    --terminal-green: #00ff41;
+}
+
+body {
+    background-color: var(--dark-bg);
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+.font-monospace { font-family: 'JetBrains Mono', monospace; }
+section { padding: 100px 0; }
+.bg-darker { background-color: #050505; }
+.text-primary { color: var(--primary-blue) !important; }
+
+/* --- 2. NAVIGATION --- */
+.navbar {
+    background-color: rgba(0, 0, 0, 0.9) !important;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #222;
+}
+.nav-link { transition: 0.3s; margin: 0 10px; }
+.nav-link:hover, .nav-link.active { color: var(--primary-blue) !important; }
+
+/* --- 3. HERO SECTION --- */
+.hero-section {
+    height: 100vh;
+    background: radial-gradient(circle at center, rgba(0, 123, 255, 0.05) 0%, transparent 70%);
+}
+.terminal-window {
+    background: #000;
+    border: 1px solid #333;
+    border-radius: 8px;
+}
+.terminal-header { background: #1a1a1a; border-bottom: 1px solid #333; }
+.dot { height: 12px; width: 12px; border-radius: 50%; display: inline-block; }
+.blink { animation: blinker 1s linear infinite; }
+@keyframes blinker { 50% { opacity: 0; } }
+
+/* --- 4. SKILL CARDS --- */
+.skill-card {
+    background: var(--card-bg);
+    border: 1px solid #222;
+    transition: all 0.3s ease;
+    border-radius: 12px;
+}
+.skill-card:hover {
+    border-color: var(--primary-blue);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 123, 255, 0.1);
+}
+.icon-box {
+    width: 60px; height: 60px;
+    background: rgba(0, 123, 255, 0.1);
+    color: var(--primary-blue);
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 50%; font-size: 1.5rem;
+}
+
+/* --- 5. GALLERY SECTION */
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    border: 1px solid #222;
+    height: 250px;
+}
+.gallery-item img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+.gallery-overlay {
+    position: absolute; top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 123, 255, 0.85);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    opacity: 0; transition: 0.4s ease;
+    padding: 20px; text-align: center;
+}
+.gallery-item:hover .gallery-overlay { opacity: 1; }
+.gallery-item:hover img { transform: scale(1.1); }
+
+/* --- 6. FOOTER --- */
+footer { border-top: 1px solid #222; }
+.social-link { color: white; font-size: 1.5rem; transition: 0.3s; }
+.social-link:hover { color: var(--primary-blue); }
+

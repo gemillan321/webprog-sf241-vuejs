@@ -5,6 +5,7 @@ import Utang from './components/Utang.vue'
 
 
 const app = createApp(App)
+
 app.component('food-item', FoodItem)
 app.component('utang', Utang)
 app.mount('#app')
