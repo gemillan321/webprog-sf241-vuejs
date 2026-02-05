@@ -6,6 +6,6 @@ import Utang from './components/Utang.vue'
 
 const app = createApp(App)
 
-app.component('food-item', FoodItem)
-app.component('utang', Utang)
+app.component('comment-form', CommentForm)
+app.component('comment', Comment)
 app.mount('#app')

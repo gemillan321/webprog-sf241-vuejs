@@ -18,4 +18,6 @@ onMounted(() => {
   <ul>
     <li v-for="instrument in instruments" :key="instrument.id">{{ instrument.name }}</li>
   </ul>
+  <comment-form/>
+  <comment/>
 </template>
