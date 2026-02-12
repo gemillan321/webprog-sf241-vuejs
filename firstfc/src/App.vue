@@ -20,4 +20,5 @@ onMounted(() => {
   </ul>
   <comment-form/>
   <comment/>
+ <rest-api/>
 </template>
